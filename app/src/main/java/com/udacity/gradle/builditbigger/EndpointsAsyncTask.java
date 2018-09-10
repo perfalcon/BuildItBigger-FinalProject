@@ -1,10 +1,13 @@
 package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.falcon.balav.jokedisplay.JokeActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -13,12 +16,16 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
+import static com.falcon.balav.jokedisplay.JokeActivity.JOKE_KEY;
+
 public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
 private static MyApi myApiService = null;
 private Context context;
+public static final String TAG = EndpointsAsyncTask.class.getSimpleName ();
 
 @Override
 protected String doInBackground(Pair<Context, String>... params) {
+        Log.v(TAG,"in Background");
         if(myApiService == null) {  // Only do this once
         MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
         new AndroidJsonFactory (), null)
@@ -47,12 +54,17 @@ public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientReques
 
 
         } catch (IOException e) {
+                Log.v(TAG, "IOException");
         return e.getMessage();
         }
         }
 
 @Override
 protected void onPostExecute(String result) {
+        Log.v(TAG,"post execute -->"+result);
         Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(context, JokeActivity.class);
+        intent.putExtra(JOKE_KEY, result);
+        context.startActivity(intent);
         }
 }
