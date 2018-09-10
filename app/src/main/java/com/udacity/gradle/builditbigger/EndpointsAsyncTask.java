@@ -25,6 +25,7 @@ public static final String TAG = EndpointsAsyncTask.class.getSimpleName ();
 
 @Override
 protected String doInBackground(Pair<Context, String>... params) {
+
         Log.v(TAG,"in Background");
         if(myApiService == null) {  // Only do this once
         MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
@@ -54,8 +55,8 @@ public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientReques
 
 
         } catch (IOException e) {
-                Log.v(TAG, "IOException");
-        return e.getMessage();
+                Log.v(TAG, "IOException"+ e.getMessage ());
+        return  "Oops Connection Error ... Please Try again!!!";
         }
         }
 
