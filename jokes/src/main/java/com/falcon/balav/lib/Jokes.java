@@ -7,7 +7,7 @@ public class Jokes {
     ArrayList<String> alJokes = new ArrayList<>();
     public Jokes(){
         alJokes.add("Q. What do you call a droid that likes taking the scenic route? A. R2-Detour!");
-        alJokes.add("Q: Why are all of Superman’s costumes tight? A: They’re all size S.");
+        alJokes.add("Q: Why are all of Superman's costumes tight? A: They're all size S.");
         alJokes.add ("What do you call a dinosaur that is sleeping?\n" +
                 "\n" +
                 "A dino-snore");

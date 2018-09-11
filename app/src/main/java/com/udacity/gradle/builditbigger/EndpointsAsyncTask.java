@@ -22,6 +22,7 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
 private static MyApi myApiService = null;
 private Context context;
 public static final String TAG = EndpointsAsyncTask.class.getSimpleName ();
+public static final String ERROR_MSG="Oops Connection Error ... Please Try again!!!";
 
 @Override
 protected String doInBackground(Pair<Context, String>... params) {
@@ -50,14 +51,13 @@ public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientReques
                 return myApiService.joke ().execute().getJoke();
         } catch (IOException e) {
                 Log.v(TAG, "IOException"+ e.getMessage ());
-        return  "Oops Connection Error ... Please Try again!!!";
+        return ERROR_MSG;
         }
         }
 
 @Override
 protected void onPostExecute(String result) {
         Log.v(TAG,"post execute -->"+result);
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(context, JokeActivity.class);
         intent.putExtra(JOKE_KEY, result);
         context.startActivity(intent);

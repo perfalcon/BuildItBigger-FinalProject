@@ -54,15 +54,15 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
     }
 
-    public void launchJokeActivity(View view) {
+   /* public void launchJokeActivity(View view) {
         Log.v(TAG, "about to call the jokeActivity");
-      /*  Intent intent = new Intent (this,JokeActivity.class);
+      *//*  Intent intent = new Intent (this,JokeActivity.class);
         Jokes  jokeSource = new Jokes ();
         String joke = jokeSource.getJoke ();
         intent.putExtra(JokeActivity.JOKE_KEY, joke);
-        startActivity(intent);*/
+        startActivity(intent);*//*
         Log.v(TAG, " jokeActivity started");
-    }
+    }*/
 
 
 }

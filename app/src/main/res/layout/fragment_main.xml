@@ -13,15 +13,23 @@
         android:id="@+id/instructions_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/text_size"
         android:text="@string/instructions" />
 
     <Button
+        android:id="@+id/btn_Joke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/instructions_text_view"
-        android:onClick="launchJokeActivity"
-        android:text="@string/button_text"
-        android:id="@+id/btn_Joke"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/marginStart"
+        android:layout_marginLeft="@dimen/marginLeft"
+        android:layout_marginTop="@dimen/marginTop"
+
+        android:text="@string/button_text" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
