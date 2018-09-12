@@ -50,8 +50,8 @@ public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientReques
         try {
                 return myApiService.joke ().execute().getJoke();
         } catch (IOException e) {
-                Log.v(TAG, "IOException"+ e.getMessage ());
-        return ERROR_MSG;
+                Log.v(TAG, "Exception Caught, reason:"+ e.getMessage ());
+                return null;
         }
         }
 

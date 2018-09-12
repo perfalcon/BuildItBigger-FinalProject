@@ -58,7 +58,7 @@ public class ExampleInstrumentedTest {
         onView (withId (R.id.btn_Joke)).perform (click ());
 
         onView (withId (R.id.joke_textview))
-                .check (matches (not (withText (""))));
+                .check (matches (isDisplayed ()));
     }
 
     @After
