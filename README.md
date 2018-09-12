@@ -168,4 +168,5 @@ Once you have a functioning project, consider adding more features to test your 
 * Write a Gradle task that starts the GCE dev server, runs all the Android tests, and shuts down the dev server.
 
 ####STATUS ####
+
 The Project Review is Completed and Accepted on 9/12/208.
